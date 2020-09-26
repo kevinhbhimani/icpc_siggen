@@ -316,6 +316,21 @@ static int print_signal(char *cmd, MJD_Siggen_Setup *setup){
     if (i%10 == 9) printf("\n");
   }
   printf("\n");
+  
+  //modified by Kevin Bhimani to write data to a text file
+  int written = 0;
+  FILE *f = fopen("signal.txt", "w");
+
+  for(i = 0; i < setup->ntsteps_out; i++){
+    written = fprintf (f,"%f\n",s[i]);
+   }  
+  //written = fwrite(s,sizeof(float), 1, f);
+
+  if (written == 0) {
+    printf("Error during writing to file !");
+  }
+  fclose(f);
+  //Kevin's modifications end here
   return 0;
 }
 

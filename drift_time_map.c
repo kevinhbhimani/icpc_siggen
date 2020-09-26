@@ -5,7 +5,7 @@
  * uses t90 as drift time, assuming that siggen output time steps are 10 ns
  *
  * to compile: 
- *  gcc -o drift_time_map drift_time_map.c calc_signal.c cyl_point.c \
+ *  gcc -o drift_time_map calc_signal.c cyl_point.c \
  *  detector_geometry.c fields.c point.c read_config.c drift_time_map.c -lm
  *
  * to run: drift_time_map <config_file> <DT_map_output_file>
